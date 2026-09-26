@@ -86,4 +86,5 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    app.run(main())
+    # Kurigram создаёт свой event loop при импорте, asyncio.run() с ним несовместим
+    app.loop.run_until_complete(main())
