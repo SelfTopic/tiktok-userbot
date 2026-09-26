@@ -78,11 +78,16 @@ async def update_forever() -> None:
 
 
 async def main() -> None:
-    async with app:
+    # Вход по QR: коды входа Telegram доставляет сторонним клиентам ненадёжно.
+    # При уже сохранённой сессии флаг ни на что не влияет.
+    await app.start(use_qr=True)
+    try:
         updater = asyncio.create_task(update_forever())
         log.info("запущен, слушаю чат %s", CHAT)
         await idle()
         updater.cancel()
+    finally:
+        await app.stop()
 
 
 if __name__ == "__main__":

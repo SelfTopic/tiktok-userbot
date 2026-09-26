@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY --chown=app:app bot.py downloader.py ./
 # Проверка, что зависимости ставятся и импортируются
-RUN python -c "import pyrogram, tgcrypto, yt_dlp, gallery_dl, httpx, dotenv" \
+RUN python -c "import pyrogram, tgcrypto, qrcode, yt_dlp, gallery_dl, httpx, dotenv" \
     && ffmpeg -version > /dev/null
 VOLUME /app/data
 

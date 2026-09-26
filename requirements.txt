@@ -1,4 +1,4 @@
-kurigram[fast]
+kurigram[fast,qrcode]
 python-dotenv
 httpx
 yt-dlp[default,curl-cffi]
