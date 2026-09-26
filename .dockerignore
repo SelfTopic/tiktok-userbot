@@ -1,0 +1,9 @@
+.git
+.github
+.env
+*.session
+*.session-journal
+venv/
+out/
+data/
+__pycache__/

@@ -1,0 +1,5 @@
+kurigram[fast]
+python-dotenv
+httpx
+yt-dlp[default,curl-cffi]
+gallery-dl

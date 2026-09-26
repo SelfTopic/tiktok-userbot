@@ -1,0 +1,14 @@
+services:
+  bot:
+    image: ghcr.io/selftopic/tiktok-userbot:latest
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - data:/app/data
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  data:
